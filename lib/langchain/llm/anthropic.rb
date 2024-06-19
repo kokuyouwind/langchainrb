@@ -101,7 +101,7 @@ module Langchain::LLM
     # @option params [Float] :top_p Use nucleus sampling.
     # @return [Langchain::LLM::AnthropicResponse] The chat completion
     def chat(params = {})
-      if params[:messages].all? { _1.is_a?(Langchain::Messages::ChatMessage) }
+      if params[:messages].all? { _1.is_a?(Langchain::ChatMessage) }
         convert_chat_messages!(params)
       end
 

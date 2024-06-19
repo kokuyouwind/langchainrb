@@ -67,9 +67,9 @@ RSpec.describe Langchain::LLM::Anthropic do
       let(:system) { "Answer in English." }
       let(:messages) do
         [
-          Langchain::Messages::ChatMessage.system("Answer in 1 words."),
-          Langchain::Messages::ChatMessage.user("How high is the sky?"),
-          Langchain::Messages::ChatMessage.system("Answer with a word starting with B.")
+          Langchain::ChatMessage.system("Answer in 1 words."),
+          Langchain::ChatMessage.user("How high is the sky?"),
+          Langchain::ChatMessage.system("Answer with a word starting with B.")
         ]
       end
       let(:fixture) { File.read("spec/fixtures/llm/anthropic/chat_with_system.json") }

@@ -470,7 +470,7 @@ RSpec.describe Langchain::LLM::OpenAI do
 
     context "with chatMessages" do
       it "convert to raw messages and send to client" do
-        response = subject.chat(messages: [Langchain::Messages::ChatMessage.user(prompt)])
+        response = subject.chat(messages: [Langchain::ChatMessage.user(prompt)])
 
         expect(response).to be_a(Langchain::LLM::OpenAIResponse)
         expect(response.model).to eq(model)

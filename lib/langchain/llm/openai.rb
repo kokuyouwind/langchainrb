@@ -111,7 +111,7 @@ module Langchain::LLM
     # @option params [Array<Hash>] :messages List of messages comprising the conversation so far
     # @option params [String] :model ID of the model to use
     def chat(params = {}, &block)
-      if params[:messages].all? { _1.is_a?(Langchain::Messages::ChatMessage) }
+      if params[:messages].all? { _1.is_a?(Langchain::ChatMessage) }
         params[:messages] = params[:messages].map(&:to_hash)
       end
       parameters = chat_parameters.to_params(params)
