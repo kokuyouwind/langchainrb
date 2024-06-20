@@ -3,7 +3,7 @@
 module Langchain
   # Generic messages that can be used in the `chat` method of the LLM adapter
   # It is recommended that `assistants/messages/*_messages.rb` be unified with this one in the future.
-  class ChatMessage
+  module ChatMessage
     attr_reader :role, :content
 
     ROLES = [:system, :user, :assistant].freeze
